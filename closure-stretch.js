@@ -2,9 +2,8 @@
 
 const wrapLog = function (callback, name) {
   /* your code here */
-  return function(num1, num2) {
-    const total = callback(num1, num2);
-    console.log(`${name}(${num1},${num2}) => ${total}`);
+  return function() {
+    console.log(`${name}(${arguments[0]},${arguments[1]}) => ${callback(arguments[0], arguments[1])}`);
   }
 };
 
